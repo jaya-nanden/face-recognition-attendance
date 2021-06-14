@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/example.js"></script>
+    <title>MyCamu</title>
+</head>
+<body>
+    <div class="blue-container"></div>
+    <div class="time-table">
+        <div class="header">
+            <h3>EVEN-SR-C2 | 2020-2021</h3>
+            <h3>10 June 2021</h3> 
+            <button id="mybtn" class="weekly" type="submit">Weekly Schedule</button>
+        </div>
+        <hr>
+        <div id="class1" class="single-class">
+            <h3>COURSE NAME (COURSE CODE)</h3>
+            <h3 class="prof-name">Proffesor NAME</h3>
+            <p class="status">Attendance Status</p>
+            <p>9:30 AM - 10:30 AM</p>
+            <p>(60 min)</p>
+            <button id="attend-online" class="record">Attend Online Class</button>
+        </div>
+        <hr>
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    
+    <!-- Modal Box/Page -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Wait Till the webcam loads..</p>
+          <video id="player" autoplay></video>
+          <button id="capture">Capture</button>
+          <button id="try-again">Try Again</button>
+          <canvas id="canvas" width=320 height=240></canvas>
+          
+          <!-- <img id="myCanvas" alt="shit"> -->
+          <a id="download" download="photo.png">
+            <button id="predict">Download</button>
+          </a>
+        </div>
+      
+      </div>
+    <script src="/script.js"></script>
+</body>
+</html>
