@@ -10,3 +10,9 @@
 
 - Class Name and Time
 - Record Attendance Button
+
+
+Form 
+
+- Mail ID
+- Roll number

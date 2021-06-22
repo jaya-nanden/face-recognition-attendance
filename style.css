@@ -11,7 +11,7 @@ button {
     border-color: transparent;
     border-radius: 4px;
     cursor: pointer;
-    background-color: black;
+    background-color: #3F51BC;
 }
 
 .blue-container {
@@ -20,7 +20,7 @@ button {
     background-color: #3F51BC;
 }
 
-.time-table {
+.container {
     display: block;
     width: 50%;
     margin: 20px;
@@ -28,7 +28,32 @@ button {
     margin-right: auto;
     padding: 20px;
     background-color: #fff;  
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    border: 3px solid #6a7ce2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+
+.time-table {
     font-family: Montserrat;
+    border-radius: 8px;
 }
 
 .header {
@@ -81,9 +106,13 @@ button {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    text-align: center;
+
 }
   
-/* The Close Button */
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -100,7 +129,44 @@ button {
 
 /* Video Player */
 #player {
-    display: center;
-    width:450px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
 }
+
+.video-button {
+    margin: 10px;
+}
+
+.predict-status {
+    display: none;
+
+}
+
+
+#loader {
+    /* display: none; */
+    visibility: hidden;
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.loader-position {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1040 !important;
+}
+

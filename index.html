@@ -11,7 +11,17 @@
 </head>
 <body>
     <div class="blue-container"></div>
-    <div class="time-table">
+    <div class="form container">
+      <form action="#" method="get">
+        
+        <label for="roll_no">Roll NO</label>
+        <input id="roll_no" placeholder="Enter roll number here" type="text" required><br>
+        <label for="mail_id">Mail ID</label>
+        <input id="mail_id" placeholder="Enter mail id here" type="email" required><br>
+        <button id="save_btn" type="submit">Save</button>
+      </form>
+    </div>
+    <div class="time-table container">
         <div class="header">
             <h3>EVEN-SR-C2 | 2020-2021</h3>
             <h3>10 June 2021</h3> 
@@ -29,26 +39,35 @@
         <hr>
     </div>
 
-    <!-- Trigger/Open The Modal -->
     
-    <!-- Modal Box/Page -->
+    <!-- Camera Page -->
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Wait Till the webcam loads..</p>
-          <video id="player" autoplay></video>
-          <button id="capture">Capture</button>
-          <button id="try-again">Try Again</button>
-          <canvas id="canvas" width=320 height=240></canvas>
-          
-          <!-- <img id="myCanvas" alt="shit"> -->
-          <a id="download" download="photo.png">
-            <button id="predict">Submit</button>
-          </a>
+          <p>Wait Till the webcam loads...</p>
+          <div class="video-player">
+            <video id="player" autoplay></video>
+          </div>
+          <div class="video-button">
+            <button id="capture">Capture</button>
+            <button id="try-again">Try Again</button>
+          </div>
+
+          <div class="captured-image">
+            <canvas id="canvas" width=320 height=240></canvas>
+          </div>
+
+          <div class="capture-button">
+            <button id="predict">Submit</button> 
+          </div>
         </div>
       
+      </div>
+      <div id="loader" class="loader-position"></div>
+      <div class="predict-status">
+        
       </div>
     <script src="/script.js"></script>
 </body>
