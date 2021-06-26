@@ -33,6 +33,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
         player.srcObject.getVideoTracks().forEach(track => track.stop());
         context.clearRect(0, 0, canvas.width, canvas.height);
+        // loader.style.visibility = "hidden";
     }
 }
 
@@ -71,7 +72,8 @@ predictButton.addEventListener('click', () => {
     var i = document.getElementById("canvas").toDataURL();
     // console.log(i.toString());
     loader.style.visibility = "visible";
-    
+    // https://face-authen-api.herokuapp.com/predict
+    // http://127.0.0.1:5000/predict
     fetch('https://face-authen-api.herokuapp.com/predict', {
         method: 'POST',
         body: JSON.stringify({
@@ -91,11 +93,11 @@ predictButton.addEventListener('click', () => {
         if(data['match_status'] == "Yes") {
             window.alert(data['match_status'] + ", Login Successful... (Opening Teams)");
         } else {
-            window.alert(data['match_status'] + ", Try Again... (Have U Enter Roll No properly? ;p)");
+            window.alert(data['match_status'] + ", Try Again... (Make Sure Your Face is Captured ;p)");
         }
         console.log(data);
     }).catch(function (error) {
-        console.warn('Something went wrong.', error);
+        console.warn('Something went wrong...', error);
     });
     
 });
