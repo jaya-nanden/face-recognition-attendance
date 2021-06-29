@@ -1,8 +1,8 @@
 var readButton = document.getElementById('read-data');
 readButton.addEventListener('click', () => {
-    // https://face-authen-api.herokuapp.com/predict
+    // https://face-authen-api.herokuapp.com/read
     // http://127.0.0.1:5000/read
-    fetch('http://127.0.0.1:5000/read', {
+    fetch('https://face-authen-api.herokuapp.com/read', {
         method: 'POST',
         // body: JSON.stringify({
         //     rollno: roll_no.value,

@@ -74,7 +74,7 @@ predictButton.addEventListener('click', () => {
     loader.style.visibility = "visible";
     // https://face-authen-api.herokuapp.com/predict
     // http://127.0.0.1:5000/predict
-    fetch('http://127.0.0.1:5000/predict', {
+    fetch('https://face-authen-api.herokuapp.com/predict', {
         method: 'POST',
         body: JSON.stringify({
             rollno: roll_no.value,
