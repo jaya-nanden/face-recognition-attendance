@@ -74,7 +74,7 @@ predictButton.addEventListener('click', () => {
     loader.style.visibility = "visible";
     // https://face-authen-api.herokuapp.com/predict
     // http://127.0.0.1:5000/predict
-    fetch('https://face-authen-api.herokuapp.com/predict', {
+    fetch('http://127.0.0.1:5000/predict', {
         method: 'POST',
         body: JSON.stringify({
             rollno: roll_no.value,
@@ -101,4 +101,32 @@ predictButton.addEventListener('click', () => {
     });
     
 });
+
+var readButton = document.getElementById('read-data');
+readButton.addEventListener('click', () => {
+    // https://face-authen-api.herokuapp.com/predict
+    // http://127.0.0.1:5000/read
+    fetch('http://127.0.0.1:5000/read', {
+        method: 'POST',
+        // body: JSON.stringify({
+        //     rollno: roll_no.value,
+        //     imgbase64: i
+        // }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    }).then(function (response) {
+        // loader.style.visibility = "hidden";
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then(function (data) {
+        console.log(data);
+    }).catch(function (error) {
+        console.warn('Something went wrong...', error);
+    });
+    
+});
+
 
