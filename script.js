@@ -33,8 +33,9 @@ window.onclick = function(event) {
         modal.style.display = "none";
         player.srcObject.getVideoTracks().forEach(track => track.stop());
         context.clearRect(0, 0, canvas.width, canvas.height);
-        // loader.style.visibility = "hidden";
+        loader.style.visibility = "hidden";
     }
+    // loader.style.visibility = "hidden";
 }
 
 // Video Mode ON
@@ -90,6 +91,7 @@ predictButton.addEventListener('click', () => {
         }
         return Promise.reject(response);
     }).then(function (data) {
+        loader.style.visibility = "hidden";
         if(data['match_status'] == "Yes") {
             window.alert(data['match_status'] + ", Login Successful... (Opening Teams)");
         } else {
@@ -97,36 +99,11 @@ predictButton.addEventListener('click', () => {
         }
         console.log(data);
     }).catch(function (error) {
+        loader.style.visibility = "hidden";
         console.warn('Something went wrong...', error);
     });
     
 });
 
-var readButton = document.getElementById('read-data');
-readButton.addEventListener('click', () => {
-    // https://face-authen-api.herokuapp.com/predict
-    // http://127.0.0.1:5000/read
-    fetch('http://127.0.0.1:5000/read', {
-        method: 'POST',
-        // body: JSON.stringify({
-        //     rollno: roll_no.value,
-        //     imgbase64: i
-        // }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    }).then(function (response) {
-        // loader.style.visibility = "hidden";
-        if (response.ok) {
-            return response.json();
-        }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log(data);
-    }).catch(function (error) {
-        console.warn('Something went wrong...', error);
-    });
-    
-});
 
 

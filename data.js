@@ -12,7 +12,6 @@ readButton.addEventListener('click', () => {
             'Content-type': 'application/json; charset=UTF-8'
         }
     }).then(function (response) {
-        // loader.style.visibility = "hidden";
         if (response.ok) {
             return response.json();
         }
