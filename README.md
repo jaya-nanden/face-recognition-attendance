@@ -19,7 +19,11 @@ Below we will explain the problems which we are solving by upgrading the current
   and returns yes for successful recognition of student and no for unauthorised individual. By this we can eliminate the proxy in online classes. The importance of checking 
   the student for attending daily or individual classes is equal to the importance of checking the student before examination.
   
-    // Video or Gif comes here
+
+
+https://user-images.githubusercontent.com/65902731/126609668-72f734cc-ccc1-4ad8-823b-a0735fbe1d1a.MP4
+
+
     
   ### Working of Face Recognition:
   
